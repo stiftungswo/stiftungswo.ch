@@ -1,0 +1,31 @@
+version: "3.1"
+services:
+  app:
+    build:
+      context: ./app
+    container_name: stiftungswo_app
+    volumes:
+    - ./app:/var/app
+    working_dir: /var/app
+    command: "php -S 0.0.0.0:8000 server.php"
+    depends_on:
+    - mysql
+    ports:
+    - "58000:8000"
+  mysql:
+    image: mysql:5.7
+    command: mysqld --sql_mode="NO_ENGINE_SUBSTITUTION"
+    container_name: stiftungswo_db
+    environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    ports:
+    - "53306:3306"
+    volumes:
+    - ./database:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: stiftungswo_phpmyadmin
+    environment:
+    - PMA_ARBITRARY=1
+    ports:
+    - 58080:80
