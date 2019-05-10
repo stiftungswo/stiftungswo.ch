@@ -1,37 +1,30 @@
 app:
-    url: https://stiftungswo.ch
-    locale: de
-    debug: true
+  url: https://stiftungswo.ch
+  locale: de
+  debug: true
 
 cms:
-    theme: stiftungswo2019 (git@github.com:stiftungswo/oc-stiftungswo-theme.git)
-    edgeUpdates: false
-    enableSafeMode: false
+  theme: stiftungswo2019
+  edgeUpdates: false
+  enableSafeMode: false
 
 database:
-    connection: mysql
-    host: stiftungswo_db
-    port: 3306
-    username: root
-    password: ""
-    database: stiftungswo2019
+  connection: mysql
+  host: stiftungswo_db
+  port: 3306
+  username: root
+  password: ""
+  database: stiftungswo2019
 
 git:
-    deployment: false
-    bareRepo: true          # Exclude everything except themes and custom plugins in git
-    excludePlugins: true   # Even exclude plugins from your repo. Private plugins will be
-                            # checkout out again during each "install" run. Be careful!
-                            # Manual changes to these plugins will be overwritten.
-
+  deployment: false
+  bareRepo: true          # Exclude everything except themes and custom plugins in git
+  excludePlugins: false   # Even exclude plugins from your repo. Private plugins will be
+                          # checkout out again during each "install" run. Be careful!
+                          # Manual changes to these plugins will be overwritten.
 plugins:
-    - Vdlp.Redirect
-    - Rainlab.Pages
-    - Rainlab.Builder
-    - Indikator.Backend
-    - Inetis.Dump
-    - OFFLINE.SiteSearch
-    - OFFLINE.ResponsiveImages
-    - StiftungSWO.SWOAdmin (git@github.com:stiftungswo/oc-stiftungswo-plugin.git)
+  - Rainlab.Builder
+  - Inetis.Dump
 
 # mail:
 #     host: smtp.mailgun.org

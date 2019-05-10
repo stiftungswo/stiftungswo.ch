@@ -1,0 +1,48 @@
+fields:
+    title:
+        label: Titel
+        span: auto
+        type: text
+        tab: Generell
+    slug:
+        label: Slug
+        span: auto
+        disabled: 1
+        type: text
+        tab: Generell
+tabs:
+    fields:
+        content:
+            label: Info
+            size: ''
+            span: full
+            type: richeditor
+            tab: Generell
+        showcase_text:
+            label: Text
+            size: ''
+            span: auto
+            type: richeditor
+            tab: Showcase
+        showcase_image:
+            label: Bild
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: Showcase
+        domains:
+            label: 'Gehört zu Bereich(e)'
+            nameFrom: title
+            descriptionFrom: description
+            emptyOption: 'Bereiche auswählen'
+            span: auto
+            type: relation
+            tab: Beziehungen
+        employee:
+            label: Mitarbeiter
+            nameFrom: fullName
+            descriptionFrom: description
+            list: $/stiftungswo/swoadmin/models/employee/columns.yaml
+            span: auto
+            type: recordfinder
+            tab: Beziehungen

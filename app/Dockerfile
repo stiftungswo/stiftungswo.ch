@@ -1,21 +1,17 @@
-FROM php:7.2-cli
+FROM offlinegmbh/oc-bootstrapper
 
-RUN apt update && apt install unzip libpng-dev -y
-
-RUN docker-php-ext-install pdo pdo_mysql && \
-    php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php && \
-    php composer-setup.php && \
-    php -r "unlink('composer-setup.php');" && \
-    mv composer.phar /usr/local/bin/composer
-
-RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/www/html/*
-
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-
-RUN docker-php-ext-install gd zip
+RUN apk update && \
+    apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev && \
+    docker-php-ext-configure gd \
+    --with-freetype-dir=/usr/include/ \
+    --with-png-dir=/usr/include/ \
+    --with-jpeg-dir=/usr/include/ && \
+    docker-php-ext-install -j$(nproc) gd && \
+    apk add openldap-dev && \
+    docker-php-ext-configure ldap && \
+    docker-php-ext-install ldap && \
+    apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
-
-RUN composer global require offline/oc-bootstrapper
-ENV PATH "$PATH:/root/.composer/vendor/bin"
-RUN echo $PATH
+RUN chown -R 1000:1000 /tmp
+USER 1000:1000

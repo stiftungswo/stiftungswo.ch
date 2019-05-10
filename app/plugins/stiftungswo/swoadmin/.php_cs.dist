@@ -1,0 +1,7 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in("/project");
+$config = PhpCsFixer\Config::create()
+    ->setFinder($finder);
+return $config;

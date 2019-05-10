@@ -1,0 +1,41 @@
+title = "Bereich-Detail"
+url = "/bereich/detail/:slug"
+layout = "default"
+is_hidden = 0
+
+[domainSubpageView]
+==
+{% set domainSubpage = domainSubpageView.subpage %}
+
+{% if domainSubpage %}
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <section>
+                <div class="subpage-title">
+                    <h1 class="bildung d-inline">{{ domainSubpage.title }}</h1>
+
+                    <div class="boxes d-inline">
+                        <div class="boxes-spacer">
+                            <div class="box {{ domainSubpage.domain.slug }}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    {{ domainSubpage.content | raw }}
+                </div>
+            </section>
+            {% for project in domainSubpage.visible_projects %}
+                {% if loop.index0 % 2 == 0 %}
+                    {% partial "showcases/left" data=project %}
+                {% else %}
+                    {% partial "showcases/right" data=project %}
+                {% endif %}
+            {% endfor %}
+
+
+        </div>
+    </div>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

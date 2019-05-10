@@ -1,0 +1,18 @@
+{
+    "name": "swo/swoadmin",
+    "type": "oc-plugin",
+    "description": "The October CMS Plugin in use by the SWO",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philipp Fehr",
+            "email": "philipp@thefehr.me"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://gitlab.com/TheFehr/ClassFinder"
+        }
+    ]
+}

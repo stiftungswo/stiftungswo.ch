@@ -1,0 +1,47 @@
+title = "Projekt"
+url = "/projekt/:slug"
+layout = "default"
+is_hidden = 0
+
+[projectView]
+==
+{% set project = projectView.project %}
+
+{% if project %}
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <section>
+                <div class="subpage-title">
+                    <h1 class="bildung d-inline">{{ project.title }}</h1>
+
+                    <div class="boxes d-inline">
+                        {% for domain in project.domains %}
+                            <div class="boxes-spacer">
+                                <a href="/bereich/{{ domain.slug }}" title="{{ domain.title }}">
+                                    <div class="box {{ domain.slug }}"></div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="clearfix">
+                    {{ project.content | raw }}
+                </div>
+            </section>
+
+            {% partial "showcases/employee" data=project.employee %}
+            
+            <!-- 
+            <section>
+                <h2>Angestellter</h2>
+                <p>
+                    <span class="image left"><img src="images/pic03.jpg" alt=""></span>
+                    Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+                </p>
+            </section> -->
+        </div>
+    </div>
+{% else %}
+    <h1>ERROR?</h1>
+{% endif %}

@@ -1,0 +1,18 @@
+==
+<section>
+    <h2>
+        <a href="{{ data.url }}">
+            {{ data.title }}
+        </a>
+    </h2>
+    <div class="clearfix">
+       {% if data.showcase_image %}
+        <a href="{{ data.url }}">
+            <span class="image right">
+                <img src="{{ data.showcase_image | media }}" alt="">
+            </span>
+        </a>
+        {% endif %}
+        {{ data.showcase_text | raw }}
+    </div>
+</section>

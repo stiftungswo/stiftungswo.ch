@@ -1,0 +1,10 @@
+name: Prozesse
+form: $/stiftungswo/swoadmin/models/process/fields.yaml
+modelClass: Stiftungswo\Swoadmin\Models\Process
+defaultRedirect: stiftungswo/swoadmin/processes
+create:
+    redirect: 'stiftungswo/swoadmin/processes/update/:id'
+    redirectClose: stiftungswo/swoadmin/processes
+update:
+    redirect: stiftungswo/swoadmin/processes
+    redirectClose: stiftungswo/swoadmin/processes

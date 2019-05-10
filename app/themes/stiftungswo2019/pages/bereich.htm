@@ -1,0 +1,48 @@
+title = "Bereich"
+url = "/bereich/:slug"
+layout = "default"
+is_hidden = 0
+
+[domainView]
+==
+{% set domain = domainView.domain %}
+
+{% if domain %}
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <section>
+                <div class="subpage-title">
+                    <h1 class="bildung d-inline">{{ domain.title }}</h1>
+
+                    <div class="boxes d-inline">
+                        <div class="boxes-spacer">
+                            <div class="box {{ domain.slug }}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    {{ domain.content | raw }}
+                </div>
+            </section>
+            {% for subpage in domain.subpages %}
+                {% if loop.index0 % 2 == 0 %}
+                    {% partial "showcases/left" data=subpage %}
+                {% else %}
+                    {% partial "showcases/right" data=subpage %}
+                {% endif %}
+            {% endfor %}
+            
+            {% for project in domain.visible_projects %}
+                {% if loop.index0 % 2 == 0 %}
+                    {% partial "showcases/left" data=project %}
+                {% else %}
+                    {% partial "showcases/right" data=project %}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+{% else %}
+    
+{% endif %}

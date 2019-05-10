@@ -1,7 +1,7 @@
 {
-    "name": "StiftungSWO/stiftungswo.ch",
-    "description": "stiftungswo.ch",
-    "homepage": "https://stiftungswo.ch",
+    "name": "october/october",
+    "description": "October CMS",
+    "homepage": "https://octobercms.com",
     "keywords": ["october", "cms", "octobercms", "laravel"],
     "license": "MIT",
     "authors": [
@@ -38,14 +38,14 @@
         "october/backend": "~1.0",
         "october/cms": "~1.0",
         "laravel/framework": "5.5.*",
-        "wikimedia/composer-merge-plugin": "dev-master",
-        "offline/oc-bootstrapper": "^0.4.5"
+        "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.7",
         "phpunit/phpunit": "~5.7",
         "phpunit/phpunit-selenium": "~1.2",
-        "meyfa/phpunit-assert-gd": "1.1.0"
+        "meyfa/phpunit-assert-gd": "1.1.0",
+        "friendsofphp/php-cs-fixer": "2.13.0"
     },
     "autoload-dev": {
         "classmap": [
@@ -60,12 +60,13 @@
         ],
         "post-update-cmd": [
             "php artisan october:util set build"
-        ]
+        ],
+        "format": "php-cs-fixer fix plugins/stiftungswo"
     },
     "config": {
         "preferred-install": "dist",
         "platform": {
-            "php": "7.0"
+            "php": "7.2"
         }
     },
     "minimum-stability": "dev",

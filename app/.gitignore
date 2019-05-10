@@ -1,7 +1,8 @@
+composer.phar
 *
 !.gitignore
-!composer.*
-composer.phar
+!composer.lock
+!composer.json.example
 !.env.*
 !october.yaml
 !git.cron.sh
@@ -9,3 +10,10 @@ composer.phar
 !.gitlab-ci.yml
 !Dockerfile
 !phpunit.xml
+!xdebug.ini
+!themes
+!themes/**/*
+!plugins
+!plugins/stiftungswo
+!plugins/stiftungswo/*
+!plugins/stiftungswo/**/*

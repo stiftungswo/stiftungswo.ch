@@ -1,0 +1,10 @@
+name: Bereiche
+form: $/stiftungswo/swoadmin/models/domain/fields.yaml
+modelClass: Stiftungswo\Swoadmin\Models\Domain
+defaultRedirect: stiftungswo/swoadmin/domains
+create:
+    redirect: 'stiftungswo/swoadmin/domains/update/:id'
+    redirectClose: stiftungswo/swoadmin/domains
+update:
+    redirect: stiftungswo/swoadmin/domains
+    redirectClose: stiftungswo/swoadmin/domains

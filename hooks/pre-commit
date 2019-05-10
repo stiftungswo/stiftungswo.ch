@@ -1,0 +1,55 @@
+#!/bin/bash
+jspath="app/themes/stiftungswo2019"
+phppath="app/plugins/stiftungswo/swoadmin"
+
+jsfiles=$(git diff --cached --name-only --diff-filter=ACM "*.ts" "*.tsx" | sed s,$jspath/,, | tr '\n' ' ')
+phpfiles=$(git diff --cached --name-only --diff-filter=ACM "*.php" | sed s,$phppath/,, | tr '\n' ' ')
+
+
+exitstatus=0
+
+
+if [[ ! ( -z "$jsfiles" ) ]];
+then
+
+    git checkout-index --prefix=git-export-dir/ -a
+    echo "$jsfiles" | xargs docker run --rm -v $(pwd)/git-export-dir/$jspath:/app -w /app node:10 npx -q prettier --list-different --print-width 140 --single-quote --trailing-comma es5
+
+    if [[ $? != 0 ]];
+    then
+        echo
+        echo "js files were not properly formatted, please format them with:"
+        echo "yarn format"
+        echo
+
+
+        exitstatus=1
+    fi
+fi
+
+
+if [[ ! ( -z "$phpfiles" ) ]];
+then
+
+    [[ ! -d git-export-dir/ ]] && git checkout-index --prefix=git-export-dir/ -a
+
+    echo "$phpfiles" | xargs docker run --rm -v $(pwd)/git-export-dir/$phppath:/project --user $(id -u):$(id -g) herloct/php-cs-fixer:2.13.0 \
+    fix --config=/project/.php_cs.dist --dry-run --stop-on-violation --using-cache=no --path-mode=intersection > /dev/null 2>&1
+
+    if [[ $? -ne 0 ]];
+    then
+        echo
+        echo "php files were not properly formatted, please format them with:"
+        echo "composer run format"
+        echo
+
+        exitstatus=1
+    fi
+
+fi
+
+
+[ -d git-export-dir/ ] && rm -rf git-export-dir/
+[ -f .php_cs.cache ] && rm .php_cs.cache
+
+exit $exitstatus

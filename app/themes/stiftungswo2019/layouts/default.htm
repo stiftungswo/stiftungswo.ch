@@ -1,0 +1,81 @@
+[viewBag]
+titleSuffix = ""
+==
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="de">
+
+<head>
+    <title>{{ this.page.title }} - SWO | Stiftung Wirtschaft und Ökologie</title>
+    <meta name="title" content="{{ this.page.meta_title ~ this.page.titleSuffix }}">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="{{ [
+      'assets/sass/main.scss'
+    ]|theme }}" rel="stylesheet" />
+    
+    <noscript>
+        <link href="{{ 'assets/css/noscript.css'|theme }}" rel="stylesheet"/>
+    </noscript>
+    
+    {% styles %}
+</head>
+
+<body class="is-preload menuOnRight new_arrows">
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header class="headerimage titleInHeader" id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <a class="logo" href="/">
+                    <span class="symbol"><img
+                            alt=""
+                            src="https://www.stiftungswo.ch/wp-content/uploads/2013/12/Logo_freigestellt1.png"/></span>
+            </a>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    {% partial 'navigation' %}
+
+    {% page %}
+
+    {% partial 'footer' %}
+
+</div>
+
+<!-- Scripts -->
+
+    <script src="{{ [
+        '@jquery',
+        '@framework',
+        '@framework.extras',
+        'assets/js/browser.min.js',
+        'assets/js/breakpoints.min.js',
+        'assets/js/util.js',
+        'assets/js/main.js'
+        ]|theme }}" ></script>
+        
+    <script crossorigin="anonymous" defer
+        integrity="sha384-ukiibbYjFS/1dhODSWD+PrZ6+CGCgf8VbyUH7bQQNUulL+2r59uGYToovytTf4Xm"
+        src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
+        
+    {% scripts %}
+
+</body>
+
+</html>

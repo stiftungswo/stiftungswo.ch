@@ -1,0 +1,27 @@
+plugin:
+    name: 'stiftungswo.swoadmin::lang.plugin.name'
+    description: 'stiftungswo.swoadmin::lang.plugin.description'
+    author: StiftungSWO
+    icon: oc-icon-tree
+    homepage: ''
+navigation:
+    projects:
+        label: Projekt
+        url: stiftungswo/swoadmin/projects
+        icon: icon-bell
+    employees:
+        label: Angestellte
+        url: stiftungswo/swoadmin/employees
+        icon: icon-users
+    habitats:
+        label: Lebensraum
+        url: stiftungswo/swoadmin/habitats
+        icon: icon-tree
+    domains:
+        label: Bereich
+        url: stiftungswo/swoadmin/domains
+        icon: icon-dot-circle-o
+    processes:
+        label: Prozess
+        url: stiftungswo/swoadmin/processes
+        icon: icon-cogs

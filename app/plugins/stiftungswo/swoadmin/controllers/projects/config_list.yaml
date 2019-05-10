@@ -1,0 +1,12 @@
+list: $/stiftungswo/swoadmin/models/project/columns.yaml
+modelClass: Stiftungswo\Swoadmin\Models\Project
+title: Projekte
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'stiftungswo/swoadmin/projects/update/:id'

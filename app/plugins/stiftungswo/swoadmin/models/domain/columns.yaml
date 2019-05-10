@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+        sortable: false
+    title:
+        label: title
+        type: text
+    content:
+        label: content
+        type: text

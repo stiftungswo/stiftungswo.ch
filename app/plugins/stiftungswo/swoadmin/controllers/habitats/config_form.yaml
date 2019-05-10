@@ -1,0 +1,10 @@
+name: Lebensraeume
+form: $/stiftungswo/swoadmin/models/habitat/fields.yaml
+modelClass: Stiftungswo\Swoadmin\Models\Habitat
+defaultRedirect: stiftungswo/swoadmin/habitats
+create:
+    redirect: 'stiftungswo/swoadmin/habitats/update/:id'
+    redirectClose: stiftungswo/swoadmin/habitats
+update:
+    redirect: stiftungswo/swoadmin/habitats
+    redirectClose: stiftungswo/swoadmin/habitats

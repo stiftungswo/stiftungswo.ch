@@ -1,0 +1,17 @@
+fields:
+    first_name:
+        label: Vorname
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        disabled: 1
+        dependsOn:
+            - first_name
+            - last_name
+        type: text
+    last_name:
+        label: Nachname
+        span: left
+        type: text

@@ -1,0 +1,10 @@
+name: Projekte
+form: $/stiftungswo/swoadmin/models/project/fields.yaml
+modelClass: Stiftungswo\Swoadmin\Models\Project
+defaultRedirect: stiftungswo/swoadmin/projects
+create:
+    redirect: 'stiftungswo/swoadmin/projects/update/:id'
+    redirectClose: stiftungswo/swoadmin/projects
+update:
+    redirect: stiftungswo/swoadmin/projects
+    redirectClose: stiftungswo/swoadmin/projects

@@ -1,0 +1,10 @@
+columns:
+    showcase_image:
+        label: Bild
+        type: thumb
+    title:
+        label: Titel
+        type: text
+    slug:
+        label: Slug
+        type: text

@@ -1,0 +1,11 @@
+name: Mitarbeiter
+modelClass: Stiftungswo\Swoadmin\Models\Employee
+form: $/stiftungswo/swoadmin/models/employee/fields.yaml
+defaultRedirect: stiftungswo/swoadmin/employees
+create:
+    redirect: 'stiftungswo/swoadmin/employees/update/:id'
+    redirectClose: stiftungswo/swoadmin/employees
+update:
+    redirect: stiftungswo/swoadmin/employees
+    redirectClose: stiftungswo/swoadmin/employees
+preview: {  }
