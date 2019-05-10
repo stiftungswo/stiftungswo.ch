@@ -1,0 +1,12 @@
+scss_files: 'app/webpacker/stylesheets/**/*.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  Indentation:
+    severity: warning
+    width: 2
+
+  PropertySortOrder:
+    enabled: true

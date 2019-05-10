@@ -4,5 +4,5 @@ set -exo pipefail
 
 bundle exec rubocop -D
 bundle exec brakeman -q -z --no-summary --no-pager
-yarn sass-lint -v --no-exit app/webpacker/**.*.scss
+yarn sass-lint -v --no-exit app/webpacker/**/**/*.scss
 bin/yarn run eslint app/webpacker/**/*.js
