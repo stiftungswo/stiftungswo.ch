@@ -1,0 +1,167 @@
+///
+/// Phantom by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Tiles */
+.tiles {
+  $gutter: _size(gutter);
+
+  @include vendor('flex-wrap', 'wrap');
+  margin: ($gutter * -1) 0 ($gutter * 1.5) ($gutter * -1);
+  position: relative;
+
+  article {
+    margin: ($gutter * 0.5) 0 0 ($gutter * 0.5);
+    position: relative;
+
+    > a, > div {
+      @include vendor('display', 'flex');
+      @include vendor('flex-direction', 'column');
+      @include vendor('align-items', 'center');
+      @include vendor('justify-content', 'center');
+
+      border-bottom: 0;
+      border-radius: _size(border-radius);
+      color: _palette(bg);
+      height: 100%;
+      left: 0;
+      padding: 1em;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+
+      > :last-child {
+        margin: 0;
+      }
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    &.bau {
+      background-color: _palette(bau);
+    }
+
+    &.bildung {
+      background-color: _palette(bildung);
+    }
+
+    &.integration {
+      background-color: _palette(integration);
+    }
+
+    &.zivildienst {
+      background-color: _palette(zivildienst);
+    }
+
+    &.prozess {
+      background-color: _palette(swo-grau);
+
+      a {
+        color: _palette(bg);
+      }
+    }
+
+    &.style6 {
+      > :before {
+        background-color: _palette(accent6);
+      }
+    }
+
+    body:not(.is-touch) & {
+      &:hover {
+        @include vendor('transform', 'scale(1.025)');
+
+        &:before {
+          background-color: _palette(bg-accent);
+          opacity: 0.35;
+        }
+
+        .icon {
+          max-height: 15em;
+          opacity: 1;
+        }
+
+        color: #fff !important;
+      }
+    }
+  }
+
+  * + & {
+    margin-top: _size(element-margin);
+  }
+
+  body.is-preload & {
+    article {
+      @include vendor('transform', 'scale(0.9)');
+      opacity: 0;
+    }
+  }
+
+  body.is-touch & {
+    article {
+      .icon {
+        max-height: 15em;
+        opacity: 1;
+      }
+    }
+  }
+
+  @include breakpoint('<=large') {
+    $gutter: _size(gutter) * 0.5;
+
+    margin: ($gutter * -1) 0 ($gutter * 1.5) ($gutter * -1);
+    @include vendor('display', 'flex');
+
+    article {
+      height: calc(#{(100vw / 2)} - #{$gutter * 2.5});
+      margin: $gutter 0 0 $gutter;
+      width: calc(#{(100vw / 2)} - #{$gutter * 2.5});
+
+      &:hover {
+        @include vendor('transform', 'scale(1.0)');
+      }
+    }
+  }
+
+  @include breakpoint('<=small') {
+    $gutter: _size(gutter) * 0.25;
+
+    margin: ($gutter * -1) 0 ($gutter * 1.5) ($gutter * -1);
+
+    article {
+      height: calc(#{(100vw / 2)} - #{$gutter * 2.5});
+      margin: $gutter 0 0 $gutter;
+      width: calc(#{(100vw / 2)} - #{$gutter * 2.5});
+
+      &:hover {
+        @include vendor('transform', 'scale(1.0)');
+      }
+    }
+  }
+
+  @include breakpoint('<=xsmall') {
+    $gutter: _size(gutter) * 0.25;
+
+    margin: ($gutter * -1) 0 ($gutter * 2) ($gutter * -1);
+
+    article {
+      margin: $gutter 0 0 $gutter;
+
+      .icon {
+        display: none;
+      }
+    }
+  }
+
+  + .tiles {
+    margin-top: 2em;
+  }
+
+}

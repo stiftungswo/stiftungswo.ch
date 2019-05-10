@@ -1,0 +1,249 @@
+///
+/// Phantom by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Basic */
+
+// MSIE: Required for IEMobile.
+@-ms-viewport {
+  width: device-width;
+}
+
+// MSIE: Prevents scrollbar from overlapping content.
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+// Ensures page width is always >=320px.
+@include breakpoint('<=xsmall') {
+  html, body {
+    min-width: 320px;
+  }
+}
+
+// Set box model to border-box.
+// Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: _palette(bg);
+
+  // Stops initial animations until page loads.
+  &.is-preload {
+    *, *:before, *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
+
+}
+
+.d-inline {
+  display: inline;
+}
+
+$box-size: 30px;
+$box-size-small: 15px;
+$box-margin: .45em;
+
+.subpage-title, .footer-boxes {
+
+  align-items: baseline;
+  display: flex;
+
+  .boxes {
+    display: flex;
+
+    .boxes-spacer {
+      height: 3em;
+
+      @include breakpoint('<=medium') {
+        height: 2em;
+      }
+    }
+
+    .box {
+      height: $box-size;
+      margin-left: $box-margin;
+
+      width: $box-size;
+
+      &.zivildienst {
+        background-color: _palette(zivildienst);
+      }
+
+      &.bildung {
+        background-color: _palette(bildung);
+      }
+
+      &.bau {
+        background-color: _palette(bau);
+      }
+
+      &.integration {
+        background-color: _palette(integration);
+      }
+
+      &.process {
+        background-color: _palette(swo-blau);
+      }
+
+      @include breakpoint('<=medium') {
+        height: $box-size-small;
+        width: $box-size-small;
+      }
+    }
+  }
+
+  &.footer-boxes {
+    $box-size: 2em;
+    $box-size-small: 0.5em;
+
+    display: block;
+
+    width: auto;
+
+
+    ul {
+      list-style-type: none;
+
+      li {
+        &::before {
+          content: "\25AA";
+          display: inline-block;
+          font-size: $box-size;
+          margin-left: 0;
+          width: 0.25 * $box-size;
+        }
+
+        &.zivildienst {
+          &::before {
+            color: _palette(zivildienst);
+          }
+        }
+
+        &.bildung {
+          &::before {
+            color: _palette(bildung);
+          }
+        }
+
+        &.bau {
+          &::before {
+            color: _palette(bau);
+          }
+        }
+
+        &.integration {
+          &::before {
+            color: _palette(integration);
+          }
+        }
+
+        &.process {
+          &::before {
+            color: _palette(swo-blau);
+          }
+        }
+
+        a {
+          border-bottom: 0;
+          display: inline-block;
+          height: 100%;
+
+          margin-bottom: .5em;
+          width: auto;
+        }
+
+        &.active {
+          &::before {
+            color: #fff !important;
+          }
+
+          a {
+            color: #fff;
+          }
+
+          &.zivildienst {
+            background-color: _palette(zivildienst);
+          }
+
+          &.bildung {
+            background-color: _palette(bildung);
+          }
+
+          &.bau {
+            color: _palette(bau);
+          }
+
+          &.integration {
+            color: _palette(integration);
+          }
+
+          &.process {
+            color: _palette(swo-blau);
+          }
+
+          .boxes-spacer {
+            width: auto;
+          }
+        }
+      }
+    }
+
+    a {
+
+
+      //.boxes {
+      //    display: block;
+      //
+      //    .boxes-spacer {
+      //        height: 2 * $box-size;
+      //
+      //        display: flex;
+      //
+      //        .box {
+      //            height: $box-size;
+      //            width: $box-size;
+      //        }
+      //
+      //        .box-title {
+      //            margin-left: $box-margin + $box-size;
+      //
+      //            display: inline-block;
+      //        }
+      //
+      //        &.active, &:hover {
+      //            .inner-box {
+      //                height: $box-size * 0.8;
+      //                width: $box-size * 0.8;
+      //
+      //                margin: $box-size * 0.1;
+      //
+      //                background-color: #FFF;
+      //
+      //                display: inline-block;
+      //            }
+      //
+      //            .box {
+      //                height: 2 * $box-size;
+      //                width: 100%;
+      //            }
+      //
+      //            .box-title {
+      //                color: #FFF;
+      //            }
+      //        }
+      //    }
+      //}
+    }
+  }
+}

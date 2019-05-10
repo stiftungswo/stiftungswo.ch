@@ -1,0 +1,15 @@
+{
+  "name": "stiftungswo_ch",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^4.0.2",
+    "eslint": "^5.16.0",
+    "rails-ujs": "^5.2.3",
+    "sass-lint": "^1.13.1",
+    "turbolinks": "^5.2.0"
+  },
+  "devDependencies": {
+    "sass-lint-auto-fix": "^0.17.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}

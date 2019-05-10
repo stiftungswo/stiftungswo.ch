@@ -1,0 +1,340 @@
+///
+/// Phantom by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Header */
+
+#header {
+  @include padding(5em, 0, (3em, 0, -5em, 0));
+
+  &.titleInHeader {
+    height: 30vh;
+
+
+    h1, h2 {
+      color: #585858;
+      margin: auto;
+      text-align: center;
+      text-transform: none;
+    }
+
+    h1 {
+      font-size: 2.25em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .titles {
+      position: absolute;
+      top: 2.5em;
+      width: 100%;
+
+    }
+
+    position: relative;
+    @include breakpoint('<=small') {
+
+      h1 {
+        font-size: 1.1em;
+      }
+
+      h2 {
+        font-size: 0.8em;
+      }
+
+      .titles {
+        top: auto;
+      }
+    }
+  }
+
+  &.headerimage {
+    background: linear-gradient(to top, rgba(67, 59, 72, 0.2), rgba(67, 59, 72, 0.2)),
+    url("https://www.stiftungswo.ch/wp-content/uploads/DSC_0062.jpg");
+    background-size: cover;
+
+    .titles {
+      left: 50%;
+      margin: 0;
+      margin-right: -50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    .logo {
+      background-color: transparentize(_palette(bg), 0.5);
+      border-radius: _size(border-radius);
+
+      left: 0.25em;
+      top: 0.5em;
+
+      .symbol {
+        height: 3em;
+        position: relative;
+        width: 6em;
+
+        img {
+          bottom: 0;
+          height: auto;
+          left: 0;
+          margin: auto;
+          max-height: calc(100% - 0.5em);
+          max-width: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: auto;
+        }
+      }
+    }
+
+    nav {
+      right: 0.5em;
+      top: 0.5em;
+
+      ul {
+        li {
+          a {
+            height: 3em;
+            line-height: 3em;
+          }
+
+          a[href="#menu"] {
+            text-indent: 3em;
+            width: 3em;
+
+            &:before, &:after {
+              background-size: 1.75em 1.75em;
+            }
+
+            &:hover {
+              &:before {
+                opacity: 1;
+              }
+
+              &:after {
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    height: 22.5vh;
+    margin-bottom: 2.5em;
+    @include breakpoint('<=small') {
+
+      h1 {
+        font-size: 1em;
+      }
+
+      h2 {
+        font-size: 0.75em;
+      }
+
+      .titles {
+        left: auto;
+
+        margin: 0;
+        position: absolute;
+
+        top: auto;
+        transform: none;
+
+        width: 100%;
+      }
+
+      nav {
+        right: 0.5em;
+        top: 0.5em;
+
+        ul {
+          li {
+            a {
+              height: 2em;
+              line-height: 2em;
+            }
+
+            a[href="#menu"] {
+              text-indent: 2em;
+              width: 2em;
+
+              &:before, &:after {
+                background-size: 1.25em 1.25em;
+              }
+            }
+          }
+        }
+      }
+
+      .logo {
+        .symbol {
+          height: 2em;
+          width: 4em;
+
+          img {
+            height: auto;
+            padding: 0;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    border-bottom: 0;
+    display: inline-block;
+    left: 2em;
+    position: absolute;
+    text-decoration: none;
+    top: 1em;
+    z-index: _misc(z-index-base);
+
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .symbol {
+      img {
+        height: 3.5em;
+        width: 7em;
+      }
+    }
+  }
+
+  nav {
+    position: fixed;
+    right: 2em;
+    top: 2em;
+    z-index: _misc(z-index-base);
+
+    ul {
+      @include vendor('display', 'flex');
+      @include vendor('align-items', 'center');
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: block;
+        padding: 0;
+
+        a {
+          background-color: transparentize(_palette(bg), 0.5);
+          border: 0;
+          border-radius: _size(border-radius);
+          display: block;
+          font-size: 0.8em;
+          font-weight: _font(weight-bold);
+          height: 3em;
+          letter-spacing: _font(letter-spacing);
+          line-height: 3em;
+          padding: 0 1.5em;
+          position: relative;
+          text-transform: uppercase;
+        }
+
+        a[href="#menu"] {
+          -webkit-tap-highlight-color: transparent;
+          font-size: 1em;
+          overflow: hidden;
+          padding: 0;
+          text-indent: 4em;
+          white-space: nowrap;
+          width: 4em;
+
+          &:before, &:after {
+            @include vendor('transition', 'opacity #{_duration(transition)} ease');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 2em 2em;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+
+          &:before {
+            background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><style>line { stroke-width: 8px; stroke: #{_palette(accent1)}; }</style><line x1="0" y1="25" x2="100" y2="25" /><line x1="0" y1="50" x2="100" y2="50" /><line x1="0" y1="75" x2="100" y2="75" /></svg>');
+            opacity: 0;
+          }
+
+          &:after {
+            background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><style>line { stroke-width: 8px; stroke: #{_palette(fg)}; }</style><line x1="0" y1="25" x2="100" y2="25" /><line x1="0" y1="50" x2="100" y2="50" /><line x1="0" y1="75" x2="100" y2="75" /></svg>');
+            opacity: 1;
+          }
+
+          &:hover {
+            &:before {
+              opacity: 1;
+            }
+
+            &:after {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint('<=small') {
+    @include padding(3em, 0, (1em, 0, -3em, 0));
+
+    nav {
+      right: 0.5em;
+      top: 0.5em;
+
+      ul {
+        li {
+          a[href="#menu"] {
+            &:before, &:after {
+              background-size: 1.5em 1.5em;
+            }
+          }
+        }
+      }
+    }
+
+    .logo {
+      left: 0.5em;
+      top: 0.5em;
+
+      .symbol {
+        img {
+          @include padding(0.5em, 0.5em);
+          height: 2.5em;
+          width: 5em;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint('>medium', '(pointer: fine)') {
+  body.menuOnRight {
+    #header.headerimage {
+      nav,
+      .logo {
+        display: none;
+      }
+
+    }
+  }
+}
+
