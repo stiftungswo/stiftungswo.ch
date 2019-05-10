@@ -9,30 +9,30 @@
   $gutter: _size(gutter);
 
   @include vendor('flex-wrap', 'wrap');
-  position: relative;
   margin: ($gutter * -1) 0 ($gutter * 1.5) ($gutter * -1);
+  position: relative;
 
   article {
-    position: relative;
     margin: ($gutter * 0.5) 0 0 ($gutter * 0.5);
+    position: relative;
 
-     > a, > div {
+    > a, > div {
       @include vendor('display', 'flex');
       @include vendor('flex-direction', 'column');
       @include vendor('align-items', 'center');
       @include vendor('justify-content', 'center');
 
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 1em;
-      border-radius: _size(border-radius);
       border-bottom: 0;
+      border-radius: _size(border-radius);
       color: _palette(bg);
+      height: 100%;
+      left: 0;
+      padding: 1em;
+      position: absolute;
       text-align: center;
       text-decoration: none;
+      top: 0;
+      width: 100%;
       z-index: 3;
 
       > :last-child {
@@ -45,19 +45,19 @@
     }
 
     &.bau {
-        background-color: _palette(bau);
+      background-color: _palette(bau);
     }
 
     &.bildung {
-        background-color: _palette(bildung);
+      background-color: _palette(bildung);
     }
 
     &.integration {
-        background-color: _palette(integration);
+      background-color: _palette(integration);
     }
 
     &.zivildienst {
-        background-color: _palette(zivildienst);
+      background-color: _palette(zivildienst);
     }
 
     &.prozess {
@@ -88,7 +88,7 @@
           opacity: 1;
         }
 
-        color: #ffffff !important;
+        color: #fff !important;
       }
     }
   }
@@ -120,9 +120,9 @@
     @include vendor('display', 'flex');
 
     article {
-      width: calc(#{(100vw / 2)} - #{$gutter * 2.5});
       height: calc(#{(100vw / 2)} - #{$gutter * 2.5});
       margin: $gutter 0 0 $gutter;
+      width: calc(#{(100vw / 2)} - #{$gutter * 2.5});
 
       &:hover {
         @include vendor('transform', 'scale(1.0)');
@@ -136,9 +136,9 @@
     margin: ($gutter * -1) 0 ($gutter * 1.5) ($gutter * -1);
 
     article {
-      width: calc(#{(100vw / 2)} - #{$gutter * 2.5});
       height: calc(#{(100vw / 2)} - #{$gutter * 2.5});
       margin: $gutter 0 0 $gutter;
+      width: calc(#{(100vw / 2)} - #{$gutter * 2.5});
 
       &:hover {
         @include vendor('transform', 'scale(1.0)');

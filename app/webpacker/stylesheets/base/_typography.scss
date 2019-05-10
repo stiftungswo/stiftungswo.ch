@@ -28,9 +28,9 @@ a {
           'border-bottom-color #{_duration(transition)} ease',
           'color #{_duration(transition)} ease'
   ));
-  text-decoration: none;
-  color: _palette(fg);
   border-bottom: dotted 1px transparentize(_palette(fg), 0.5);
+  color: _palette(fg);
+  text-decoration: none;
 
   &:hover {
     border-bottom-color: transparent;
@@ -52,12 +52,12 @@ p {
 }
 
 h1 {
-  font-size: 2.75em;
   color: _palette(fg-bold);
+  font-size: 2.75em;
   font-weight: _font(weight-bold-alt);
+  letter-spacing: _font(letter-spacing-alt);
   line-height: 1.3;
   margin: 0 0 (_size(element-margin) * 0.5) 0;
-  letter-spacing: _font(letter-spacing-alt);
 
   a {
     color: inherit;
@@ -112,14 +112,14 @@ h6 {
 
 @include breakpoint('<=small') {
   h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    -ms-hyphens: auto;
     -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -ms-word-break: break-all;
     -webkit-hyphens: auto;
     hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
   }
 
   h2 {
@@ -152,8 +152,8 @@ blockquote {
 
 code {
   background: _palette(border-bg);
-  border-radius: _size(border-radius);
   border: solid _size(border-width) _palette(border);
+  border-radius: _size(border-radius);
   font-family: _font(family-fixed);
   font-size: 0.9em;
   margin: 0 0.25em;
@@ -169,8 +169,8 @@ pre {
   code {
     display: block;
     line-height: 1.75;
-    padding: 1em 1.5em;
     overflow-x: auto;
+    padding: 1em 1.5em;
   }
 }
 
@@ -204,7 +204,7 @@ header {
 }
 
 .clearfix::after {
-  content: "";
   clear: both;
+  content: "";
   display: table;
 }

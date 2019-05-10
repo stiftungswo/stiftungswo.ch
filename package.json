@@ -9,6 +9,7 @@
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
+    "sass-lint-auto-fix": "^0.17.0",
     "webpack-dev-server": "^3.3.1"
   }
 }

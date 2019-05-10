@@ -1,78 +1,78 @@
 /* Desktop */
 
 #home_menu_desktop {
-    display: none;
+  display: none;
 }
 
 @media (pointer: fine) {
-    #home_menu_mobile {
-        display: none;
-    }
+  #home_menu_mobile {
+    display: none;
+  }
 
-    #home_menu_desktop {
-        display: block;
-        width: 100%;
-        height: calc(77.5vh - 5em);
-        min-width: 375px;
-        min-height: 375px;
-        justify-content: center;
+  #home_menu_desktop {
+    display: block;
+    height: calc(77.5vh - 5em);
+    justify-content: center;
+    min-height: 375px;
+    min-width: 375px;
+    width: 100%;
 
-        svg {
-            width: 100%;
-            height: 100%;
+    svg {
+      height: 100%;
+      width: 100%;
 
-            > g {
-                @include vendor('transform', 'scale(0.95)');
-                transform-origin: center;
+      > g {
+        @include vendor('transform', 'scale(0.95)');
+        transform-origin: center;
+      }
+
+      #schweife #circle4854 {
+        fill: _palette(swo-grau);
+      }
+
+      #pfeile {
+        a {
+          path {
+            fill: #fff;
+          }
+
+          path:first-child {
+            fill: _palette(swo-grau);
+          }
+
+          &:hover {
+            path:first-child {
+              stroke: _palette(swo-grau);
+              stroke-width: 2px;
             }
-
-            #schweife #circle4854 {
-                fill: _palette(swo-grau);
-            }
-
-            #pfeile {
-                a {
-                    path {
-                        fill: white;
-                    }
-
-                    path:first-child {
-                        fill: _palette(swo-grau);
-                    }
-
-                    &:hover {
-                        path:first-child {
-                            stroke: _palette(swo-grau);
-                            stroke-width: 2px;
-                        }
-                    }
+          }
 
 
-                }
-            }
-
-            #kuchen {
-                a {
-                    &:not(:hover) {
-                        g:first-child {
-                            filter: none;
-                        }
-                    }
-
-                    g {
-                        transition: 1s all;
-                    }
-                }
-            }
         }
+      }
+
+      #kuchen {
+        a {
+          &:not(:hover) {
+            g:first-child {
+              filter: none;
+            }
+          }
+
+          g {
+            transition: 1s all;
+          }
+        }
+      }
     }
+  }
 
 }
 
 #kuchen_zivi g:first-child path {
-    fill: _palette(zivildienst);
+  fill: _palette(zivildienst);
 }
 
 #kuchen_bau g:first-child path {
-    fill: _palette(bau);
+  fill: _palette(bau);
 }
