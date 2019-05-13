@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: Bezeichnung
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        disabled: 1
+        dependsOn:
+            - title
+        type: text

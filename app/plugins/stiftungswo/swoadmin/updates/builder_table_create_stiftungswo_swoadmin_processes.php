@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateStiftungswoSwoadminHabitats extends Migration
+class BuilderTableCreateStiftungswoSwoadminProcess extends Migration
 {
     public function up()
     {
-        Schema::create('stiftungswo_swoadmin_habitats', function($table)
+        Schema::create('stiftungswo_swoadmin_processes', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -21,6 +21,6 @@ class BuilderTableCreateStiftungswoSwoadminHabitats extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('stiftungswo_swoadmin_habitats');
+        Schema::dropIfExists('stiftungswo_swoadmin_processes');
     }
 }

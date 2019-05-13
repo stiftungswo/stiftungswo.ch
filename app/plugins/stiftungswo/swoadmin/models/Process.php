@@ -1,14 +1,15 @@
 <?php namespace Stiftungswo\Swoadmin\Models;
 
 use Model;
-use October\Rain\Database\Traits\Validation;
+use October\Rain\Database\Traits;
 
 /**
  * Model
  */
 class Process extends Model
 {
-    use Validation;
+    use Traits\Validation;
+    use Traits\Sluggable;
     
     /*
      * Disable timestamps by default.
@@ -23,8 +24,38 @@ class Process extends Model
     public $table = 'stiftungswo_swoadmin_processes';
 
     /**
+     * @var array Generate slugs for these attributes.
+     */
+    protected $slugs = ['slug' => 'title'];
+
+    /**
      * @var array Validation rules
      */
     public $rules = [
+        'title' => 'required'
+    ];
+
+    public function getUrlAttribute()
+    {
+        return '/prozess/' . $this->slug;
+    }
+
+    public function getVisibleProjectsAttribute()
+    {
+        return $this->projects()->visibleOnProcess()->get()->sortBy(function ($project) {
+            return $project->pivot->order;
+        });
+    }
+
+    public $belongsToMany = [
+        'projects' => [
+            Project::class,
+            'table' => 'stiftungswo_swoadmin_process_project',
+            'pivot' => [
+                'is_visible_on_domain',
+                'order',
+            ],
+            'pivotModel' => ProcessProjectPivot::class
+        ],
     ];
 }

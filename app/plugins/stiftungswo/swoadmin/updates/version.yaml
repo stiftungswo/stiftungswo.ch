@@ -1,92 +1,29 @@
 1.0.1:
-    - 'Initialize plugin.'
+  - 'Initialize plugin.'
 1.0.2:
-    - 'Created table stiftungswo_swoadmin_project'
-    - builder_table_create_stiftungswo_swoadmin_project.php
+  - 'Created table stiftungswo_swoadmin_projects'
+  - builder_table_create_stiftungswo_swoadmin_projects.php
 1.0.3:
-    - 'Created table stiftungswo_swoadmin_employee'
-    - builder_table_create_stiftungswo_swoadmin_employee.php
+  - 'Created table stiftungswo_swoadmin_employees'
+  - builder_table_create_stiftungswo_swoadmin_employees.php
 1.0.4:
-    - 'Updated table stiftungswo_swoadmin_project'
-    - builder_table_update_stiftungswo_swoadmin_project.php
+  - 'Created table stiftungswo_swoadmin_projects'
+  - builder_table_update_stiftungswo_swoadmin_projects.php
 1.0.5:
-    - 'Created table stiftungswo_swoadmin_process'
-    - builder_table_create_stiftungswo_swoadmin_process.php
+  - 'Created table stiftungswo_swoadmin_processes'
+  - builder_table_create_stiftungswo_swoadmin_processes.php
 1.0.6:
-    - 'Updated table stiftungswo_swoadmin_employee'
-    - builder_table_update_stiftungswo_swoadmin_employees.php
+  - 'Created table stiftungswo_swoadmin_domains'
+  - builder_table_update_stiftungswo_swoadmin_domains.php
 1.0.7:
-    - 'Updated table stiftungswo_swoadmin_domain'
-    - builder_table_update_stiftungswo_swoadmin_domains.php
+  - 'Created table stiftungswo_swoadmin_habitats'
+  - builder_table_create_stiftungswo_swoadmin_habitats.php
 1.0.8:
-    - 'Updated table stiftungswo_swoadmin_process'
-    - builder_table_update_stiftungswo_swoadmin_processes.php
-1.0.9:
-    - 'Updated table stiftungswo_swoadmin_project'
-    - builder_table_update_stiftungswo_swoadmin_projects.php
-1.0.10:
-    - 'Created table stiftungswo_swoadmin_habitats'
-    - builder_table_create_stiftungswo_swoadmin_habitats.php
-1.0.11:
-    - 'Updated table stiftungswo_swoadmin_domains'
-    - builder_table_update_stiftungswo_swoadmin_domains_2.php
-1.0.12:
-    - 'Updated table stiftungswo_swoadmin_habitats'
-    - builder_table_update_stiftungswo_swoadmin_habitats.php
-1.0.13:
-    - 'Updated table stiftungswo_swoadmin_processes'
-    - builder_table_update_stiftungswo_swoadmin_processes_2.php
-1.0.14:
-    - 'Updated table stiftungswo_swoadmin_employees'
-    - builder_table_update_stiftungswo_swoadmin_employees_2.php
-1.0.15:
-    - 'Updated table stiftungswo_swoadmin_domains'
-    - builder_table_update_stiftungswo_swoadmin_domains_3.php
-1.0.16:
-    - 'Updated table stiftungswo_swoadmin_domains'
-    - builder_table_update_stiftungswo_swoadmin_domains_4.php
-1.0.17:
-    - 'Updated table stiftungswo_swoadmin_domains'
-    - builder_table_update_stiftungswo_swoadmin_domains_5.php
-1.0.18:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_2.php
-1.0.19:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_3.php
-1.0.20:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_4.php
-1.0.21:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_5.php
-1.0.22:
-    - 'Created table stiftungswo_swoadmin_domain_project'
-    - builder_table_create_stiftungswo_swoadmin_domain_project.php
-1.0.23:
-    - 'Updated table stiftungswo_swoadmin_domain_project'
-    - builder_table_update_stiftungswo_swoadmin_domain_project.php
-1.0.24:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_6.php
-1.0.25:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_7.php
-1.0.26:
-    - 'Updated table stiftungswo_swoadmin_domains'
-    - builder_table_update_stiftungswo_swoadmin_domains_6.php
-1.0.27:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_8.php
-1.0.28:
-    - 'Updated table stiftungswo_swoadmin_projects'
-    - builder_table_update_stiftungswo_swoadmin_projects_9.php
-1.0.29:
-    - 'Updated table stiftungswo_swoadmin_domains'
-    - builder_table_update_stiftungswo_swoadmin_domains_7.php
-1.0.30:
-    - 'Updated table stiftungswo_swoadmin_domain_project'
-    - builder_table_update_stiftungswo_swoadmin_domain_project_2.php
-1.0.31:
-    - 'Updated table stiftungswo_swoadmin_domain_project'
-    - builder_table_update_stiftungswo_swoadmin_domain_project_3.php
+  - 'Created table stiftungswo_swoadmin_domain_subpage'
+  - builder_table_create_stiftungswo_swoadmin_domain_subpage.php
+#1.0.10:
+#    - 'Created table stiftungswo_swoadmin_domain_subpage'
+#    - builder_table_create_stiftungswo_swoadmin_domain_subpage.php
+#1.0.13:
+#    - 'Created table stiftungswo_swoadmin_process_project'
+#    - builder_table_create_stiftungswo_swoadmin_process_project.php

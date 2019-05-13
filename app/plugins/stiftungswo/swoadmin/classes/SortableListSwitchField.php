@@ -18,7 +18,7 @@ class SortableListSwitchField
         'titleFalse' => 'inetis.listswitch::lang.inetis.listswitch.title_false',
         'textTrue'   => 'inetis.listswitch::lang.inetis.listswitch.text_true',
         'textFalse'  => 'inetis.listswitch::lang.inetis.listswitch.text_false',
-        'request'    => 'onSwitchInetisListField',
+        'request'    => 'onSwitchSwoListField',
         'refreshSortable' => false
     ];
 
@@ -48,15 +48,15 @@ class SortableListSwitchField
         $config = $field->getConfig();
 
         return '
-<a href="javascript:;"
-    data-request="' . $config['request'] . '"
-    data-request-data="' . $field->getRequestData() . '"
-    data-stripe-load-indicator '
-    . ( $config['refreshSortable'] ? 'data-request-success="initializeSorting();"' : '') .
-    ' title="' . $field->getButtonTitle() . '">
-    ' . $field->getButtonValue() . '
-</a>
-';
+        <a href="javascript:;"
+            data-request="' . $config['request'] . '"
+            data-request-data="' . $field->getRequestData() . '"
+            data-stripe-load-indicator '
+            . ( $config['refreshSortable'] ? 'data-request-success="initializeSorting();"' : '') .
+            ' title="' . $field->getButtonTitle() . '">
+            ' . $field->getButtonValue() . '
+        </a>
+        ';
     }
 
     /**

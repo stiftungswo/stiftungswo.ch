@@ -1,4 +1,4 @@
-name: Mitarbeiter
+name: Angestellter
 modelClass: Stiftungswo\Swoadmin\Models\Employee
 form: $/stiftungswo/swoadmin/models/employee/fields.yaml
 defaultRedirect: stiftungswo/swoadmin/employees

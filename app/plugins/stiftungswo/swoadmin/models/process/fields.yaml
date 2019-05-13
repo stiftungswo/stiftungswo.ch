@@ -3,3 +3,36 @@ fields:
         label: Bezeichnung
         span: auto
         type: text
+    slug:
+        label: Slug
+        span: auto
+        disabled: 1
+        required: 0
+        dependsOn:
+            - title
+        type: text
+tabs:
+    fields:
+        content:
+            label: Info
+            size: ''
+            span: full
+            type: richeditor
+            tab: Generell
+        showcase_text:
+            label: Text
+            size: ''
+            span: auto
+            type: richeditor
+            tab: Showcase
+        showcase_image:
+            label: Bild
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: Showcase
+        projects:
+            span: full
+            path: projects
+            type: partial
+            tab: Beziehungen

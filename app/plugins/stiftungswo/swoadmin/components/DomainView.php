@@ -24,6 +24,8 @@ class DomainView extends ComponentBase
 
     public function onRun()
     {
-        $this->page->title = $this->domain()->title;
+        if ($this->domain()) {
+            $this->page->title = "Bereich " . $this->domain()->title;
+        }
     }
 }

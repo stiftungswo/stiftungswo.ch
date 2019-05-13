@@ -1,8 +1,7 @@
 <?php namespace Stiftungswo\Swoadmin;
 
 use Stiftungswo\Swoadmin\Classes\SortableListSwitchField;
-use Stiftungswo\Swoadmin\Components\DomainView;
-use Stiftungswo\Swoadmin\Components\ProjectView;
+use Stiftungswo\Swoadmin\Components;
 use Backend\Classes\Controller;
 use System\Classes\PluginBase;
 use Event;
@@ -20,8 +19,11 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            ProjectView::class => 'projectView',
-            DomainView::class => 'domainView'
+            Components\ProjectView::class => 'projectView',
+            Components\DomainView::class => 'domainView',
+            Components\DomainSubpageView::class => 'domainSubpageView',
+            Components\FooterBoxesView::class => 'footerBoxesView',
+            Components\ProcessView::class => 'processView',
         ];
     }
 
@@ -80,7 +82,7 @@ class Plugin extends PluginBase
          */
         Controller::extend(function ($controller) {
 
-            $controller->addDynamicMethod('onSwitchInetisListField', function () use ($controller) {
+            $controller->addDynamicMethod('onSwitchSwoListField', function () use ($controller) {
 
                 $field = post('field');
                 $id = post('id');

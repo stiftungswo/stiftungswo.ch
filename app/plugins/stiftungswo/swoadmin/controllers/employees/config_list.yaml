@@ -1,4 +1,4 @@
-title: Mitarbeiter
+title: Angestellter
 modelClass: Stiftungswo\Swoadmin\Models\Employee
 list: $/stiftungswo/swoadmin/models/employee/columns.yaml
 recordUrl: 'stiftungswo/swoadmin/employees/update/:id'

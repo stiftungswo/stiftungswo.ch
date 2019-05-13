@@ -56,5 +56,13 @@ class Project extends Model
                 'order'
             ]
         ],
+        'processes' => [
+            Process::class,
+            'table' => 'stiftungswo_swoadmin_process_project',
+            'pivot' => [
+                'is_visible_on_process',
+                'order'
+            ]
+        ],
     ];
 }

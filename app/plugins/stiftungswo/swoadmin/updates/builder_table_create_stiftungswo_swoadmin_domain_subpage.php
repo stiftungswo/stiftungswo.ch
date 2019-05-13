@@ -3,24 +3,27 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateStiftungswoSwoadminHabitats extends Migration
+class BuilderTableCreateStiftungswoSwoadminDomainSubpage extends Migration
 {
     public function up()
     {
-        Schema::create('stiftungswo_swoadmin_habitats', function($table)
+        Schema::create('stiftungswo_swoadmin_domain_subpage', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->integer('domain_id');
             $table->string('title');
             $table->string('slug');
             $table->string('showcase_image');
             $table->text('showcase_text');
             $table->text('content');
+            $table->integer('order');
+            $table->primary(['id']);
         });
     }
     
     public function down()
     {
-        Schema::dropIfExists('stiftungswo_swoadmin_habitats');
+        Schema::dropIfExists('stiftungswo_swoadmin_domain_subpage');
     }
 }

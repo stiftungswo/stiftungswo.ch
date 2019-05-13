@@ -17,7 +17,6 @@ class Domain extends Model
      */
     public $timestamps = false;
 
-
     /**
      * @var string The database table used by the model.
      */
@@ -32,12 +31,18 @@ class Domain extends Model
      * @var array Validation rules
      */
     public $rules = [
-        'title' => 'required'
+        'title' => 'required',
+        'employee_id' => 'required'
     ];
+
+    public function getUrlAttribute()
+    {
+        return '/bereich/' . $this->slug;
+    }
 
     public function getVisibleProjectsAttribute()
     {
-        return $this->projects()->visibleOnDomain()->get()->sortByDesc(function ($project) {
+        return $this->projects()->visibleOnDomain()->get()->sortBy(function ($project) {
             return $project->pivot->order;
         });
     }
@@ -51,6 +56,33 @@ class Domain extends Model
                 'order',
             ],
             'pivotModel' => DomainProjectPivot::class
-        ]
+        ],
     ];
+
+    public $hasMany = [
+        'subpages' => DomainSubpage::class
+    ];
+
+    public function beforeValidate() {
+
+        // we need to check record is created or not
+        if($this->id == NULL) {
+
+            // CREATE CASE
+
+            // we need to use differ binding scope as this record is not saved yet.
+            if($this->employee()->withDeferred(post('_session_key'))->count() == 0) {
+                throw new \ValidationException(['employee' => 'Mitarbeiter kann nicht leer sein']);
+            }
+        }
+        else {
+
+            // UPDATE CASE
+
+            // now record is created so we dont need differ binding
+            if($this->employee()->count() == 0) {
+                throw new \ValidationException(['employee' => 'Mitarbeiter kann nicht leer sein']);
+            }
+        }
+    }
 }

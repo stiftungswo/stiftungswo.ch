@@ -39,7 +39,7 @@ tabs:
             type: relation
             tab: Beziehungen
         employee:
-            label: Mitarbeiter
+            label: Zuständiger Angestellter
             nameFrom: fullName
             descriptionFrom: description
             list: $/stiftungswo/swoadmin/models/employee/columns.yaml

@@ -1,0 +1,117 @@
+projects:
+  label: Projekte
+  manage:
+    list:
+      columns:
+        showcase_image:
+          label: Bild
+          type: thumb
+          sortable: false
+        title:
+          label: Titel
+          type: text
+          sortable: false
+          searchable: true
+        slug:
+          label: Slug
+          type: text
+          sortable: false
+          searchable: true
+  view:
+    defaultSort:
+      column: pivot[order]
+      direction: ASC
+    showSorting: false
+    toolbarButtons: add|remove
+    list:
+      columns:
+        showcase_image:
+          label: Bild
+          type: thumb
+          sortable: false
+        title:
+          label: Titel
+          type: text
+          sortable: false
+          searchable: true
+        slug:
+          label: Slug
+          type: text
+          sortable: false
+          searchable: true
+        pivot[is_visible_on_domain]:
+          label: Auf der Bereichsseite anzeigen
+          type: swo-list-switch
+          icon: true
+          refreshSortable: true
+          titleTrue: "Verbergen"
+          titleFalse: "Anzeigen"
+          sortable: false
+        pivot[order]:
+          label: Reihenfolge
+          type: partial
+          path: $/stiftungswo/swoadmin/models/domain_project_pivot/_reorder.htm
+          sortable: true
+subpages:
+  label: Unterseiten
+  manage:
+    form:
+      fields:
+        title:
+          label: Bezeichnung
+          span: auto
+          type: text
+        slug:
+          label: Slug
+          span: auto
+          disabled: 1
+          dependsOn:
+            - title
+          type: text
+      tabs:
+        fields:
+          content:
+            label: Info
+            size: ''
+            span: full
+            type: richeditor
+            tab: Generell
+          showcase_text:
+            label: Text
+            size: ''
+            span: full
+            type: richeditor
+            tab: Showcase
+          showcase_image:
+            label: Bild
+            mode: image
+            span: full
+            type: mediafinder
+            tab: Showcase
+  view:
+    defaultSort:
+      column: order
+      direction: ASC
+    showSorting: false
+    toolbarButtons: create|delete
+    list:
+      columns:
+        showcase_image:
+          label: Bild
+          type: thumb
+          sortable: false
+        title:
+          label: Titel
+          type: text
+          sortable: false
+          searchable: true
+        slug:
+          label: Slug
+          type: text
+          sortable: false
+          searchable: true
+        order:
+          label: Reihenfolge
+          type: partial
+          path: $/stiftungswo/swoadmin/models/domainsubpage/_reorder.htm
+          sortable: true

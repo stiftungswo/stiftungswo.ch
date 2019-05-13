@@ -17,17 +17,21 @@ class Domains extends Controller
     
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
-    public $relationConfig = 'config_relation.yaml';
+    public $relationConfig = 'config_relations.yaml';
 
     public function __construct()
     {
         parent::__construct();
         BackendMenu::setContext('Stiftungswo.Swoadmin', 'domains');
+    }
 
-        // Grab the drag and drop requirements
+    public function update($recordId, $context = null)
+    {
         $this->addCss('/plugins/stiftungswo/swoadmin/assets/css/sortable.css');
         $this->addJs('/plugins/stiftungswo/swoadmin/assets/js/html5sortable.js');
         $this->addJs('/plugins/stiftungswo/swoadmin/assets/js/sortable.js');
+
+        return $this->asExtension('FormController')->update($recordId, $context);
     }
 
     public function onProjectsSort()
@@ -35,7 +39,7 @@ class Domains extends Controller
         return $this->makePartial('projects_order_form');
     }
 
-    public function onSwitchInetisListField($domainId)
+    public function onSwitchSwoListField($domainId)
     {
         $field = post('field');
         $id = post('id');

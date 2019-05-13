@@ -12,6 +12,7 @@ class BuilderTableCreateStiftungswoSwoadminDomainProject extends Migration
             $table->engine = 'InnoDB';
             $table->integer('domain_id');
             $table->smallInteger('project_id');
+            $table->primary(['domain_id', 'project_id']);
         });
     }
     
