@@ -1,10 +1,53 @@
-<% if user_signed_in? %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
-
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
-<p><%= current_user&.email %></p>
+<div id="main">
+  <div class="inner">
+    <div id="home_menu_mobile">
+      <section class="tiles circles" id="inner_home">
+        <article class="bau">
+          <a href="bereich/bau">
+            <h2>Bau</h2>
+          </a>
+        </article>
+        <article class="bildung">
+          <a href="bereich/bildung">
+            <h2>Bil&shy;dung</h2>
+          </a>
+        </article>
+        <article class="integration">
+          <a href="bereich/integration">
+            <h2>Inte&shy;gra&shy;tion</h2>
+          </a>
+        </article>
+        <article class="zivildienst">
+          <a href="bereich/zivildienst">
+            <h2>Zivil&shy;dienst</h2>
+          </a>
+        </article>
+      </section>
+      <section class="tiles circles" id="outer_home">
+        <article class="prozess">
+          <div>
+            <h2>Beratung</h2>
+          </div>
+        </article>
+        <article class="prozess">
+          <div>
+            <h2>Planung</h2>
+          </div>
+        </article>
+        <article class="prozess">
+          <div>
+            <h2>Unterhalt</h2>
+          </div>
+        </article>
+        <article class="prozess">
+          <div>
+            <h2>Umsetzung</h2>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div id="home_menu_desktop">
+      <%= render 'center_logo' %>
+    </div>
+  </div>
+</div>

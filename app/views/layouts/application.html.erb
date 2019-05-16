@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>StiftungswoCh</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Stiftungswo</title>
+  <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
 
-    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_pack_tag 'main' %>
-  </head>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <div class="notifications">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application' %>
+  <%= stylesheet_pack_tag 'main' %>
+  <%= stylesheet_pack_tag 'noscript', noscript: true %>
+</head>
+
+<body class="is-preload menuOnRight new_arrows">
+<div class="notifications">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Header -->
+  <header class="headerimage titleInHeader" id="header">
+    <div class="inner">
+
+      <!-- Logo -->
+      <a class="logo" href="/">
+                    <span class="symbol"><img
+                      alt=""
+                      src="https://www.stiftungswo.ch/wp-content/uploads/2013/12/Logo_freigestellt1.png" /></span>
+      </a>
+
+      <!-- Nav -->
+      <nav>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+        </ul>
+      </nav>
+
     </div>
-    <div class="container">
-      <%= yield %>
+    <div class="titles">
+      <h1>Stiftung Wirtschaft und Ökologie: </h1>
+      <h2>45 Jahre kontinuierliches Engagement für eine nachhaltige Zukunft</h2>
     </div>
-  </body>
+  </header>
+
+  <%= render 'navigation' %>
+
+  <%= yield %>
+
+  <%= render 'footer' %>
+</div>
+
+<!-- Scripts -->
+
+<!--<script src="{{ [
+        '@jquery',
+        '@framework',
+        '@framework.extras',
+        'assets/js/browser.min.js',
+        'assets/js/breakpoints.min.js',
+        'assets/js/util.js',
+        'assets/js/main.js'
+        ]|theme }}"></script>-->
+
+<script crossorigin="anonymous" defer
+        integrity="sha384-ukiibbYjFS/1dhODSWD+PrZ6+CGCgf8VbyUH7bQQNUulL+2r59uGYToovytTf4Xm"
+        src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
+
+</body>
 </html>
